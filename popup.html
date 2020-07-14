@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      html{
+        background-color: #E3E3E3;
+      }
+      body{
+        display: flex;
+        flex-direction:column;
+      }
+      button {
+        height: auto;
+        width: auto;
+        outline: none;
+      }
+      #buttonRow{
+        display: flex;
+        flex-direction: row;
+        align-items: right;
+      }
+      #add{
+        display: flex;
+        flex-direction: row;
+      }
+      #update{
+        margin-left: 1%;
+      }
+      #itemBody{
+        display: flex;
+        width: 100%;
+        height: 100%;
+        flex-direction:row;
+        align-items: left;
+        flex-wrap: wrap;
+        margin-top: 2%;
+      }
+      #itemBody div[id^='item'] {
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 5%;
+        align-items: center;
+        cursor: context-menu;
+      }
+      h3{
+        text-align: center;
+        margin-bottom: 0%;
+      }
+      .trend{
+        display: flex;
+        flex-direction: row;
+        vertical-align: super;
+      }
+      .positive{
+        color: green;
+        bottom: .9em;
+        margin-bottom: 0%;
+      }
+      .negative{
+        color: red;
+        bottom: .9em;
+        margin-bottom: 0%;
+      }
+      .neutral{
+        color: yellow;
+        bottom: 1em;
+        margin-right: 20%;
+        margin-bottom: 0%;
+      }
+      p{
+        font-size: 2.5em;
+        position: relative;
+        bottom: 0;
+      }
+      img{
+        cursor: pointer;
+      }
+      span{
+        font-size: 4.5em;
+      }
+      @keyframes symbols {
+        0%,
+        100% {
+          color: grey;
+        }
+        50% {
+          color: #004225;
+        }
+      }
+
+      span {
+        --delay: 0s;
+        animation: symbols 1s var(--delay) infinite ease-in;
+      }
+    </style>
+    <script src="popup.js"></script>
+  </head>
+  <body>
+    <div id="buttonRow">
+     <div id="add">
+       <input type="text" id="itemname" placeholder="Item name::price paid">
+       <button id="find">Find</button>
+       <button id="update">Update</button>
+     </div>
+    </div>
+    <div id="itemBody">
+    </div>
+    <div id="notFound" style="font-size:1.5em;display:none;">&#x26A0; Item not found</div>
+    <div id="Error" style="font-size:1.5em;display:none;">&#x26A0; An error has occured</div>
+  </body>
+</html>
